@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Berita Jatim - Scraping detik.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        img {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Berita Jatim (detik.com)</h1>
+
+    {% for b in berita %}
+    <div class="card">
+        <img src="{{ b.gambar }}" alt="gambar berita">
+        <h3>{{ b.judul }}</h3>
+    </div>
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
